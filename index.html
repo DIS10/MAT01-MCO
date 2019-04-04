@@ -321,9 +321,19 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="box to-animate">
-						
-						<img src="images/image2.png" class="img-responsive">
-						<p>Create a slider used to select a range of data from the file</p>
+						<p> Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/musicdb","anton","anton");
+            java.sql.Statement stmt = con.createStatement();
+            String user = username.getText();
+            String pass = password.getText();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM ANTON.ACCOUNTS WHERE USERNAME="+"'"+user+"'"+" AND PASS="+"'"+pass+"'");  
+            if (rs.next()){
+                
+    Parent loader = FXMLLoader.load(getClass().getResource("Main.fxml"));
+    Scene scene = new Scene(loader); 
+    scene.setFill(Color.TRANSPARENT);
+    Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); 
+    app_stage.setScene(scene);
+    </p>
 					</div>
 					<div class="box to-animate">
 						<img src="images/image1.png" class="img-responsive">
